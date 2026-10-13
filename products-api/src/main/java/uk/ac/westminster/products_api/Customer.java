@@ -7,6 +7,7 @@ public class Customer {
     private Address address;
 
 
+
     public Customer() {
     }
 
@@ -15,6 +16,8 @@ public class Customer {
         this.name = name;
         this.email = email;
         this.address = address;
+
+
     }
 
     public Long getId() {
