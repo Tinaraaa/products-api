@@ -18,6 +18,11 @@ public class ProductController {
         return productService.getProductById(id).orElse(null);
     }
 
+    @GetMapping("/getAllProducts")
+    public List<Product> getAllProducts(){
+        return productService.getAllProducts();
+    }
+
     @PostMapping("/products")
     public Product addProduct(@RequestBody Product product){
         return productService.addProduct(product);
