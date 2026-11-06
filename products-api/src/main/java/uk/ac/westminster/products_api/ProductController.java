@@ -9,6 +9,9 @@ import java.util.List;
 @RequestMapping("/products")
 public class ProductController {
 
+    //public ProductController(ProductService productService){
+     //    this.productService = productService; //constructor injection
+
     //Spring creates the ProductService and hands it over
     @Autowired
     private ProductService productService;
@@ -24,7 +27,7 @@ public class ProductController {
     }
 
     @PostMapping("/products")
-    public Product addProduct(@RequestBody Product product){
+    public Product addProduct(@RequestBody DigitalProduct product){
         return productService.addProduct(product);
     }
 
@@ -39,9 +42,12 @@ public class ProductController {
     }
 
 
+    @GetMapping("/products/summaries")
+    public List<String> getSummaries() {
+        return productService.getAllSummaries();
+    }
+    }
 
-
-}
 
 
 
